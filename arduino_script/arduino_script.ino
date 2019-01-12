@@ -8,11 +8,11 @@ Team 1458 Driver Station Button Interface Arduino Script
  
 Protocol:
 
-Setting Lights:
- - Send analog pin followed immediately by 1 (on) or 0 (off) and a new line. (Ex. "51\n" would turn on A5)
+Controlling LEDs:
+ - Send analog pin followed immediately by 1 (on) or 0 (off) and a new line. (Ex. b'51\n' would turn on LED 5)
 
-Getting Buttons:
- - Arduino will continuously send the number of the digital pin(s) which are grounded
+Retreiving Button States:
+ - The Arduino will send the digital pin which is grounded immediately followed by a 1 (on) or 0 (off) and a new line. (Ex. b'51\n' signifies button 5 has just been pushed down)
 */
 
 int inputPinPreviousStates[sizeof(outputPins)/sizeof(int)];
